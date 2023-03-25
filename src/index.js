@@ -2,9 +2,21 @@
 import React, { useState } from 'react';
 
 import ReactDOM from "react-dom" ;
-const element =<h1>Hello World</h1>;
-ReactDOM. render(element, document. getElementById("root"));
 
+import logo from './SWE_Logo_4C.png';
+
+//const element =<h1>Hello World</h1>;
+//ReactDOM. render(element, document. getElementById("root"));
+
+function Header(){
+          
+    return(     
+        <img src={logo} alt='logo' />,
+        <h1>SWE Attendence Form</h1>    
+    );
+}
+
+//export default Header;
 
 
 function AttendanceForm() {
@@ -13,7 +25,7 @@ function AttendanceForm() {
   const [classYear, setClassYear] = useState('');
   const [major, setMajor] = useState('');
 
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: Write code to submit attendance data to backend API

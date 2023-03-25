@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 10;
 }
 
 .App-logo {
@@ -7,6 +8,21 @@
   pointer-events: none;
 }
 
+
+.attendence_form {
+  background-color: #282c34;
+  text-align: center;
+  color: #83cad3;
+}
+
+.form {
+  background-color: #282c34;
+  margin: auto;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  color: #83cad3;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -15,6 +31,7 @@
 
 .App-header {
   background-color: #282c34;
+  padding: 10;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
