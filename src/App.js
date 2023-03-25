@@ -7,7 +7,8 @@ function MyComponent() {
     <div class ='attendence_form'>
       <img src={logo} alt='SWE logo' style={{width: '200px'}} />
       <h1>SWE Attendence Form</h1>
-      <h4>Enter your information below</h4>
+      <h4>For new members, please fill out the all information. </h4>
+      <h4>For returning members, please only fill out name and netID.</h4>
       <form class = 'form'>
         <label for="name">Full Name:</label>
         <input type="text" id="name" value="Name"></input><br></br>
