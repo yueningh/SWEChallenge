@@ -10,7 +10,7 @@ function MyComponent() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('/attendence', {
+    fetch('/attendance', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -24,13 +24,13 @@ function MyComponent() {
     })
     .catch(error => {
       console.error('Error:', error);
-    });
+    })
   }
 
   return (
-    <div class ='attendence_form'>
+    <div class ='attendance_form'>
       <img src={logo} alt='SWE logo' style={{width: '200px'}} />
-      <h1>SWE Attendence Form</h1>
+      <h1>SWE Attendance Form</h1>
       <h4>For new members, please fill out the all information. </h4>
       <h4>For returning members, please only fill out name and netID.</h4>
       <form class = 'form' onSubmit={handleSubmit}>

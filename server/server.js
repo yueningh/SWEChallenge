@@ -6,9 +6,9 @@ const port = 3001;
 
 app.use(express.json());
 
-app.post('/attendence', (req, res) => {
+app.post('/attendance', (req, res) => {
     const { name, netID, year, major } = req.body;
-    const filename = 'sweAttendence.csv';
+    const filename = 'sweAttendance.csv';
     let alreadyExists = false;
     let updated = false;
     let count = 0;
@@ -37,15 +37,16 @@ app.post('/attendence', (req, res) => {
                         }
                     })
                     .on('end', () => {
-                        fs.writeFileSync(filename, '');
+                        fs.truncateSync(filename, 0);
                         rows.forEach((row) => {
-                            fs.appendFileSync(filename, '${row.name},${row.netID},${row.year},${row.major},${row.attendance}\n');
+                            const data = `${row.name},${row.netID},${row.year},${row.major},${row.attendance}\n`;
+                            fs.appendFileSync(filename, data);
                         });
                         res.send({ success: true, message: 'User attendance updated' });
                     });
             } else {
                 // if user does not exist, add a new row to the CSV file
-                const newRecord = '${name},${netID},${year},${major},1\n';
+                const newRecord = `${name},${netID},${year},${major},1\n`;
                 fs.appendFileSync(filename, newRecord);
                 res.send({ success: true, message: 'New user attendance added' });
             }
