@@ -7,7 +7,11 @@ const port = 3001;
 app.use(express.json());
 
 app.post('/attendance', (req, res) => {
-    const { name, netID, year, major } = req.body;
+    //const { name, netID, year, major } = req.body;
+    const { name, netID } = req.body;
+    const year = req.body.year || '';
+    const major = req.body.major || '';
+
     const filename = 'sweAttendance.csv';
     let alreadyExists = false;
     let updated = false;
@@ -54,5 +58,5 @@ app.post('/attendance', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Server listening at http://localhost:${port}');
+    console.log(`Server listening at http://localhost:${port}`);
 });

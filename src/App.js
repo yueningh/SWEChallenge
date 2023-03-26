@@ -28,12 +28,12 @@ function MyComponent() {
   }
 
   return (
-    <div class ='attendance_form'>
+    <div className ='attendance_form'>
       <img src={logo} alt='SWE logo' style={{width: '200px'}} />
       <h1>SWE Attendance Form</h1>
       <h4>For new members, please fill out the all information. </h4>
       <h4>For returning members, please only fill out name and netID.</h4>
-      <form class = 'form' onSubmit={handleSubmit}>
+      <form className = 'form' onSubmit={handleSubmit}>
         <label htmlFor="name">Full Name:</label>
         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)}></input><br></br>
         <label htmlFor="netID">netID:</label>
